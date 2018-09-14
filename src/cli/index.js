@@ -78,6 +78,7 @@ export async function main({
   commander.option('--ignore-platform', 'ignore platform checks');
   commander.option('--ignore-engines', 'ignore engines check');
   commander.option('--ignore-optional', 'ignore optional dependencies');
+  commander.option('--with-peer', 'install peer dependencies while installing');
   commander.option('--force', 'install and build packages even if they were built before, overwrite lockfile');
   commander.option('--skip-integrity-check', 'run install without checking if node_modules is installed');
   commander.option('--check-files', 'install will verify file tree of packages for consistency');
@@ -507,6 +508,7 @@ export async function main({
       ignorePlatform: commander.ignorePlatform,
       ignoreEngines: commander.ignoreEngines,
       ignoreScripts: commander.ignoreScripts,
+      withPeer: commander.withPeer,
       offline: commander.preferOffline || commander.offline,
       looseSemver: !commander.strictSemver,
       production: commander.production,

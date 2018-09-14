@@ -26,6 +26,7 @@ export const DEFAULTS = {
   'bin-links': true,
   'ignore-scripts': false,
   'ignore-optional': false,
+  'with-peers': true,
   registry: YARN_REGISTRY,
   'strict-ssl': true,
   'user-agent': [`yarn/${version}`, 'npm/?', `node/${process.version}`, process.platform, process.arch].join(' '),

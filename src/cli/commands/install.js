@@ -56,6 +56,7 @@ type Flags = {
   ignoreEngines: boolean,
   ignoreScripts: boolean,
   ignoreOptional: boolean,
+  withPeer: boolean,
   linkDuplicates: boolean,
   force: boolean,
   flat: boolean,
@@ -133,6 +134,7 @@ function normalizeFlags(config: Config, rawFlags: Object): Flags {
     ignoreEngines: !!rawFlags.ignoreEngines,
     ignoreScripts: !!rawFlags.ignoreScripts,
     ignoreOptional: !!rawFlags.ignoreOptional,
+    withPeer: !!rawFlags.withPeer,
     force: !!rawFlags.force,
     flat: !!rawFlags.flat,
     lockfile: rawFlags.lockfile !== false,
@@ -327,6 +329,10 @@ export class Install {
       if (cwdIsRoot) {
         pushDeps('dependencies', projectManifestJson, {hint: null, optional: false}, true);
         pushDeps('devDependencies', projectManifestJson, {hint: 'dev', optional: false}, !this.config.production);
+        console.log('------------------------------------');
+        console.log(this.flags);
+        console.log('------------------------------------');
+
         pushDeps('optionalDependencies', projectManifestJson, {hint: 'optional', optional: true}, true);
       }
 

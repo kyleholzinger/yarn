@@ -23,6 +23,7 @@ const CONFIG_KEYS = [
   'binLinks',
   'ignorePlatform',
   'ignoreScripts',
+  'withPeer',
   'disablePrepublish',
   'nonInteractive',
   'workspaceRootFolder',

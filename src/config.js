@@ -39,6 +39,7 @@ export type ConfigOptions = {
   ignoreScripts?: boolean,
   ignorePlatform?: boolean,
   ignoreEngines?: boolean,
+  withPeer?: boolean,
   cafile?: ?string,
   production?: boolean,
   disablePrepublish?: boolean,
@@ -112,6 +113,7 @@ export default class Config {
   enableLockfileVersions: boolean;
   linkFileDependencies: boolean;
   ignorePlatform: boolean;
+  withPeer: boolean;
   binLinks: boolean;
   updateChecksums: boolean;
 
@@ -421,6 +423,7 @@ export default class Config {
 
     this.ignorePlatform = !!opts.ignorePlatform;
     this.ignoreScripts = !!opts.ignoreScripts;
+    this.withPeer = !!opts.withPeer;
 
     this.disablePrepublish = !!opts.disablePrepublish;
 
